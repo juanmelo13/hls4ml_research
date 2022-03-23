@@ -1,0 +1,116 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vitis_HLS/2021.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'juan' on host 'juansus' (Linux_x86_64 version 5.4.0-100-generic) on Wed Mar 23 16:07:28 EDT 2022
+INFO: [HLS 200-10] On os Linux Mint 20.3
+INFO: [HLS 200-10] In directory '/home/juan/Documents/CNN-HLS/hls4ml/test/model_1/hls4ml_prj'
+Sourcing Tcl script 'build_prj.tcl'
+INFO: [HLS 200-1510] Running: open_project myproject_prj 
+INFO: [HLS 200-10] Opening project '/home/juan/Documents/CNN-HLS/hls4ml/test/model_1/hls4ml_prj/myproject_prj'.
+INFO: [HLS 200-1510] Running: set_top myproject 
+INFO: [HLS 200-1510] Running: add_files firmware/myproject.cpp -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding design file 'firmware/myproject.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb myproject_test.cpp -cflags -std=c++0x 
+INFO: [HLS 200-10] Adding test bench file 'myproject_test.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb firmware/weights 
+INFO: [HLS 200-10] Adding test bench file 'firmware/weights' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tb_data 
+INFO: [HLS 200-10] Adding test bench file 'tb_data' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Opening solution '/home/juan/Documents/CNN-HLS/hls4ml/test/model_1/hls4ml_prj/myproject_prj/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xcu250-figd2104-2L-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_compile -name_max_length=60
+INFO: [XFORM 203-1161] The maximum of name length is set into 60.
+INFO: [HLS 200-1510] Running: config_array_partition -maximum_size 4096 
+INFO: [XFORM 203-101] Allowed max sub elements number after partition is 4096.
+ERROR: [HLS 200-642] The 'config_array_partition -maximum_size' command is not supported.
+INFO: [HLS 200-1510] Running: config_compile -name_max_length 60 
+INFO: [XFORM 203-1161] The maximum of name length is set into 60.
+INFO: [HLS 200-1510] Running: set_part xcu250-figd2104-2L-e 
+INFO: [XFORM 203-1161] The maximum of name length is set into 60.
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+***** C SIMULATION *****
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+make: 'csim.exe' is up to date.
+INFO: Unable to open input/predictions file, using default input.
+-0.496094 -0.0273438 -0.165039 -0.625 -0.00683594 0.509766 -0.232422 0.125 -0.517578 -0.3125 
+INFO: Saved inference results to file: tb_data/csim_results.log
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.49 seconds. CPU system time: 0.42 seconds. Elapsed time: 0.96 seconds; current allocated memory: 0.000 MB.
+***** C SIMULATION COMPLETED IN 0h0m0s *****
+***** C/RTL SYNTHESIS *****
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.118 GB.
+INFO: [HLS 200-10] Analyzing design file 'firmware/myproject.cpp' ... 
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_stream.h:25:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_stream.h:26:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_stream.h:47:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_stream.h:65:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_stream.h:109:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:43:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:65:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:101:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:167:9)
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_activation_stream.h:170:24)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:241:9)
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_activation_stream.h:244:24)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:303:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:359:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:389:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:415:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:438:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:475:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:514:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:552:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:599:9)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_activation_stream.h:629:9)
+WARNING: [HLS 207-5551] unexpected pragma argument 'instances', expects function/operation (firmware/nnet_utils/nnet_mult.h:81:24)
+WARNING: [HLS 207-5523] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (firmware/nnet_utils/nnet_dense_latency.h:80:9)
+WARNING: [HLS 207-5565] '#pragma HLS unroll' can only be applied inside loop body (firmware/nnet_utils/nnet_dense_latency.h:103:9)
+WARNING: [HLS 207-5565] '#pragma HLS unroll' can only be applied inside loop body (firmware/nnet_utils/nnet_dense_latency.h:122:9)
+WARNING: [HLS 207-5524] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (firmware/nnet_utils/nnet_dense_resource.h:271:26)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_dense_compressed.h:56:9)
+WARNING: [HLS 207-5524] 'region' in '#pragma HLS Inline' is deprecated, use 'Inline Pragma' instead (firmware/nnet_utils/nnet_dense_stream.h:19:26)
+WARNING: [HLS 207-5503] the pragma is not supported and will be ignored (firmware/nnet_utils/nnet_dense_stream.h:59:9)
+WARNING: [HLS 207-5553] Unsupported interface port data type in '#pragma HLS interface ap_vld' (firmware/myproject.cpp:34:51)
+WARNING: [HLS 207-5556] Only for/while/do support the pipeline  pragma (firmware/nnet_utils/nnet_dense_latency.h:49:9)
+WARNING: [HLS 207-5554] Only for-loops and functions support the dataflow (firmware/nnet_utils/nnet_dense_latency.h:76:9)
+WARNING: [HLS 207-5556] Only for/while/do support the pipeline  pragma (firmware/nnet_utils/nnet_dense_latency.h:87:9)
+WARNING: [HLS 207-5556] Only for/while/do support the pipeline  pragma (firmware/nnet_utils/nnet_dense_latency.h:111:9)
+WARNING: [HLS 207-5556] Only for/while/do support the pipeline  pragma (firmware/nnet_utils/nnet_activation.h:72:9)
+WARNING: [HLS 207-5556] Only for/while/do support the pipeline  pragma (firmware/nnet_utils/nnet_activation.h:78:9)
+WARNING: [HLS 214-104] Only for-loops and functions support the dataflow (firmware/nnet_utils/nnet_dense_latency.h:76:9)
+Resolution: For help on HLS 214-104 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=214-104.html
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file firmware/myproject.cpp
+Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-471.html
+WARNING: [HLS 207-5287] unused parameter 'keep' (firmware/nnet_utils/nnet_helpers.h:319:63)
+WARNING: [HLS 207-5287] unused parameter 'multiplier_limit' (firmware/nnet_utils/nnet_mult.h:26:32)
+WARNING: [HLS 207-5287] unused parameter 'multiplier_limit' (firmware/nnet_utils/nnet_mult.h:79:32)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 46.89 seconds. CPU system time: 1.58 seconds. Elapsed time: 48.84 seconds; current allocated memory: 211.727 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 79.9 seconds. CPU system time: 3.78 seconds. Elapsed time: 86.03 seconds; current allocated memory: -932.852 MB.
+Pre-synthesis failed.
+    while executing
+"source build_prj.tcl"
+    invoked from within
+"hls::main build_prj.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 84.01 seconds. Total CPU system time: 4.67 seconds. Total elapsed time: 89.07 seconds; peak allocated memory: 1.118 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Wed Mar 23 16:08:57 2022...

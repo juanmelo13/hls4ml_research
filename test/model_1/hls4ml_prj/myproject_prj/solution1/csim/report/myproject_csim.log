@@ -1,0 +1,8 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+make: 'csim.exe' is up to date.
+INFO: Unable to open input/predictions file, using default input.
+-0.496094 -0.0273438 -0.165039 -0.625 -0.00683594 0.509766 -0.232422 0.125 -0.517578 -0.3125 
+INFO: Saved inference results to file: tb_data/csim_results.log
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
